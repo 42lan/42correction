@@ -6,16 +6,10 @@
 #                                                   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/12 12:42:30 by amalsago          #+#    #+#              #
-#    Updated: 2019/03/12 12:44:09 by amalsago         ###   ########.fr        #
+#    Updated: 2019/03/12 12:45:01 by amalsago         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #!/bin/bash
-grep -r --include \*.c -H "+$" $@
-grep -r --include \*.c -H "*$" $@
-grep -r --include \*.c -H "-$" $@
-grep -r --include \*.c -H "&$" $@
-grep -r --include \*.c -H "|$" $@
-grep -r --include \*.c -H "?$" $@
-grep -r --include \*.c -H ":$" $@ 
-grep -r --include \*.c -H "%$" $@ 
+grep -r --include \*.c -H "[-&|?:%]$" $@
+grep -r --include \*.c -H -e '[^/]\*$' $@
