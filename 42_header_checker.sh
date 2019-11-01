@@ -10,4 +10,6 @@
 #                                                                              #
 # **************************************************************************** #
 
-grep --recursive "By:" $@ | awk '{print $3}' | sort | uniq
+grep -r --include \*.c "By:" $@ | awk '{print $3}' | sort | uniq
+grep -r --include \*.c "Created:" $@ | awk '{print $6}' | sort | uniq
+grep -r --include \*.c "Updated:" $@ | awk '{print $6}' | sort | uniq
